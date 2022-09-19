@@ -9,8 +9,7 @@ public class PlayerBehaviour : MonoBehaviour
     public float maxHealth = 100;
     public float deltaHealthPercentage;
 
-    public TextMeshPro healthText;
-    public TextMeshPro dsadew;
+    public TextMeshProUGUI healthText;
 
     public Transform healthBar;
 

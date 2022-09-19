@@ -49,9 +49,27 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-            Vector3 LadderMove = transform.right * x + transform.up * z;
+            if (!isGrounded)
+            {
+                Vector3 LadderMove = transform.right * x + transform.up * z;
 
-            controller.Move(LadderMove * ladderSpeed * Time.deltaTime);
+                controller.Move(LadderMove * ladderSpeed * Time.deltaTime);
+            }
+            else
+            {
+                if (z >= 0)
+                {
+                    Vector3 LadderMove = transform.right * x + transform.up * z;
+
+                    controller.Move(LadderMove * ladderSpeed * Time.deltaTime);
+                }
+                else if (z <= 0)
+                {
+                    Vector3 LadderMove = transform.right * x + transform.forward * z;
+
+                    controller.Move(LadderMove * ladderSpeed * Time.deltaTime);
+                }
+            }
         }
     }
 
