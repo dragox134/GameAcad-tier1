@@ -17,7 +17,6 @@ public class PlayerBehaviour : MonoBehaviour
     public int saveSlot;
     public int loadSlot;
 
-    public bool[] loadSlots = new bool[3];
 
     public float fallSpeed = .1f;
     void Start()
@@ -55,14 +54,7 @@ public class PlayerBehaviour : MonoBehaviour
 
         health = data.health;
 
-        Vector3 position;
-        position.x = data.position[0];
-        position.y = data.position[1];
-        position.z = data.position[2];
+        Vector3 position = data.position.ToVector();
         transform.position = position;
-
-        loadSlots[0] = data.buttons[0];
-        loadSlots[1] = data.buttons[1];
-        loadSlots[2] = data.buttons[2];
     }
 }

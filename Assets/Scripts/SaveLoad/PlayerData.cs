@@ -6,7 +6,7 @@ using UnityEngine;
 public class PlayerData
 {
     public float health;
-    public float[] position;
+    public SuperVector3 position;
     public float LoadNumber;
 
     public bool[] buttons;
@@ -15,15 +15,27 @@ public class PlayerData
     {
         health = player.health;
 
-        position = new float[3];
-        position[0] = player.transform.position.x;
-        position[1] = player.transform.position.y;
-        position[2] = player.transform.position.z;
+        position = new SuperVector3(player.transform.position);
+    }
 
-        buttons = new bool[3];
-        player.loadSlots = new bool[3];
-        buttons[0] = player.loadSlots[0];
-        buttons[1] = player.loadSlots[1];
-        buttons[2] = player.loadSlots[2];
+    
+}
+
+[System.Serializable]
+public class SuperVector3
+{
+    public float x;
+    public float y;
+    public float z;
+    public SuperVector3(Vector3 vector)
+    {
+        x = vector.x;
+        y = vector.y;
+        z = vector.z;
+    }
+
+    public Vector3 ToVector()
+    {
+        return new Vector3(x, y, z);
     }
 }

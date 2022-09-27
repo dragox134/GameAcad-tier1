@@ -18,6 +18,7 @@ public class Buttons : MonoBehaviour
     private void Start()
     {
         player = playerGameObject.GetComponent<PlayerBehaviour>();
+        Debug.Log(player.maxHealth);
     }
 
     public void PlayeScreen()
@@ -28,7 +29,7 @@ public class Buttons : MonoBehaviour
         while (i <= 2)
         {
             Debug.Log("i je" + i);
-            if (player.loadSlots[i] == true)
+            if (GameLoader.Instance.loadSlots[i] == true)
             {
                 saveButtons[i].SetActive(false);
                 loadButtons[i].SetActive(true);
@@ -61,17 +62,18 @@ public class Buttons : MonoBehaviour
     
     public void SaveButton0(string sceneName)
     {
-        //player.loadSlots[0] = true;
-        //player.saveSlot = 0;
+        Debug.Log("haha");
+        GameLoader.Instance.loadSlots[0] = true;
+        player.saveSlot = 0;
         
-        //saveButtons[0].SetActive(false);
-        //loadButtons[0].SetActive(true);
-        //player.SavePlayer();
+        saveButtons[0].SetActive(false);
+        loadButtons[0].SetActive(true);
+        player.SavePlayer();
         SceneLoader.Instance.LoadScene(sceneName);
     }
     public void SaveButton1(string sceneName)
     {
-        player.loadSlots[1] = true;
+        GameLoader.Instance.loadSlots[1] = true;
         player.saveSlot = 1;
 
         saveButtons[1].SetActive(false);
@@ -81,7 +83,7 @@ public class Buttons : MonoBehaviour
     }
     public void SaveButton2(string sceneName)
     {
-        player.loadSlots[2] = true;
+        GameLoader.Instance.loadSlots[2] = true;
         player.saveSlot = 2;
 
         saveButtons[2].SetActive(false);

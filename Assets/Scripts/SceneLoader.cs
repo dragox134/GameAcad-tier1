@@ -25,8 +25,9 @@ public class SceneLoader : MonoBehaviour
         }
     }
 
-    public async void LoadScene(string sceneName)
+    public IEnumerator LoadSceneCourutine(string sceneName)
     {
+        Debug.Log("jej");
         _target = 0;
         _progressBar.fillAmount = 0;
 
@@ -35,17 +36,25 @@ public class SceneLoader : MonoBehaviour
 
         _loaderCanvas.SetActive(true);
 
-        do
-        {
+         while (!scene.isDone)
+         {
+            if (scene.progress >= 0.9f)
+            {
+                scene.allowSceneActivation = true;
+            }
             _target = scene.progress;
-        } while (scene.progress <= 0.9);
 
-        scene.allowSceneActivation = true;
-        _loaderCanvas.SetActive(false);
+            yield return null;
+         }
     }
 
     void Update()
     {
         _progressBar.fillAmount = Mathf.MoveTowards(_progressBar.fillAmount, _target, 3 * Time.deltaTime);
+    }
+
+    public void LoadScene(string sceneName)
+    {
+        StartCoroutine(LoadSceneCourutine(sceneName));
     }
 }
