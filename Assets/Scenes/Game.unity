@@ -1399,7 +1399,6 @@ MonoBehaviour:
   saveTime: 0
   saveSlot: 0
   loadSlot: 0
-  loadSlots: 
   fallSpeed: 0.1
 --- !u!1 &1286978567
 GameObject:
@@ -1981,6 +1980,14 @@ PrefabInstance:
       propertyPath: healthText
       value: 
       objectReference: {fileID: 91535738}
+    - target: {fileID: 2562746012817094803, guid: cc86b6d129d0c7f4b8f582cb41a139ab, type: 3}
+      propertyPath: m_Radius
+      value: 4.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2562746012817094803, guid: cc86b6d129d0c7f4b8f582cb41a139ab, type: 3}
+      propertyPath: m_Center.y
+      value: -2
+      objectReference: {fileID: 0}
     - target: {fileID: 2944055938903089706, guid: cc86b6d129d0c7f4b8f582cb41a139ab, type: 3}
       propertyPath: m_RootOrder
       value: 15
@@ -2025,5 +2032,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2562746012817094804, guid: cc86b6d129d0c7f4b8f582cb41a139ab, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: cc86b6d129d0c7f4b8f582cb41a139ab, type: 3}
