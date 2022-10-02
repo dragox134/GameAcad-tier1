@@ -38,7 +38,8 @@ public class PlayerBehaviour : MonoBehaviour
     
     IEnumerator Saving()
     {
-        yield return new WaitForSeconds(saveTime);
+        yield return new WaitForSeconds(10);
+        Debug.Log("Saved succesfully");
         SavePlayer();
         StartCoroutine(Saving());
     }

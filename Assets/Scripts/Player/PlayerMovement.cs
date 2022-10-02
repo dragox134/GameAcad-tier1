@@ -86,6 +86,7 @@ public class PlayerMovement : MonoBehaviour
         if (other.CompareTag("Ladder"))
         {
             ladderControls = false;
+
         }
     }
 }

@@ -14,6 +14,7 @@ public class SceneLoader : MonoBehaviour
 
     void Awake()
     {
+
         if (Instance == null)
         {
             Instance = this;
@@ -27,7 +28,6 @@ public class SceneLoader : MonoBehaviour
 
     public IEnumerator LoadSceneCourutine(string sceneName)
     {
-        Debug.Log("jej");
         _target = 0;
         _progressBar.fillAmount = 0;
 

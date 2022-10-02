@@ -172,7 +172,6 @@ GameObject:
   - component: {fileID: 2562746012817094803}
   - component: {fileID: 2562746012817094802}
   - component: {fileID: 2562746012817094801}
-  - component: {fileID: 2562746012817094804}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -187,7 +186,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2562746012817094800}
-  m_LocalRotation: {x: -0, y: -0.6979903, z: -0, w: 0.7161072}
+  m_LocalRotation: {x: 0, y: -0.6979904, z: 0, w: 0.71610713}
   m_LocalPosition: {x: 119.82, y: 32.08, z: 65.85}
   m_LocalScale: {x: 0.5307251, y: 0.5307251, z: 0.5307251}
   m_ConstrainProportionsScale: 0
@@ -209,13 +208,13 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 2
-  m_Radius: 0.5
+  m_Height: 7.12
+  m_Radius: 1.13
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
-  m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
+  m_MinMoveDistance: 0.0001
+  m_Center: {x: 0, y: -2.66, z: 0}
 --- !u!114 &2562746012817094802
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -259,21 +258,7 @@ MonoBehaviour:
   saveTime: 0
   saveSlot: 0
   loadSlot: 0
-  loadSlots: 
   fallSpeed: 0.1
---- !u!65 &2562746012817094804
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2562746012817094800}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 6.5554404, y: 6.6701174, z: 1.4907025}
-  m_Center: {x: -0.017987575, y: -2.6585948, z: 0.039661717}
 --- !u!1 &2704122388190287440
 GameObject:
   m_ObjectHideFlags: 0
@@ -495,7 +480,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3409746335734179742}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.18, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
