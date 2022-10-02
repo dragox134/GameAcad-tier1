@@ -54,10 +54,10 @@ public class Buttons : MonoBehaviour
         Application.Quit();
     }
 
-    public void Back()
+    public void Back(Canvas thisCanvas)
     {
         MainMenu.gameObject.SetActive(true);
-        GetComponentInParent<Canvas>().gameObject.SetActive(false);
+        thisCanvas.gameObject.SetActive(false);
     }
     
     public void SaveButton0(string sceneName)
@@ -69,6 +69,7 @@ public class Buttons : MonoBehaviour
         saveButtons[0].SetActive(false);
         loadButtons[0].SetActive(true);
         player.SavePlayer();
+        player.loading = false;
         SceneLoader.Instance.LoadScene(sceneName);
     }
     public void SaveButton1(string sceneName)
@@ -79,6 +80,7 @@ public class Buttons : MonoBehaviour
         saveButtons[1].SetActive(false);
         loadButtons[1].SetActive(true);
         player.SavePlayer();
+        player.loading = false;
         SceneLoader.Instance.LoadScene(sceneName);
     }
     public void SaveButton2(string sceneName)
@@ -89,6 +91,7 @@ public class Buttons : MonoBehaviour
         saveButtons[2].SetActive(false);
         loadButtons[2].SetActive(true);
         player.SavePlayer();
+        player.loading = false;
         SceneLoader.Instance.LoadScene(sceneName);
     }
 
@@ -96,16 +99,19 @@ public class Buttons : MonoBehaviour
     public void LoadButton0(string sceneName)
     {
         player.loadSlot = 0;
+        player.loading = true;
         SceneLoader.Instance.LoadScene(sceneName);
     }
     public void LoadButton1(string sceneName)
     {
         player.loadSlot = 1;
+        player.loading = true;
         SceneLoader.Instance.LoadScene(sceneName);
     }
     public void LoadButton2(string sceneName)
     {
         player.loadSlot = 2;
+        player.loading = true;
         SceneLoader.Instance.LoadScene(sceneName);
     }
 }

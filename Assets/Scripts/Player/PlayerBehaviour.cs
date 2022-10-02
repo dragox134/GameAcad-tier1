@@ -16,12 +16,22 @@ public class PlayerBehaviour : MonoBehaviour
     public float saveTime;
     public int saveSlot;
     public int loadSlot;
-
+    public bool loading;
 
     public float fallSpeed = .1f;
     void Start()
     {
-        health = maxHealth;
+        if (loading)
+        {
+            GetComponent<CharacterController>().enabled = false;
+            LoadPlayer();
+            GetComponent<CharacterController>().enabled = true;
+            Debug.Log("loading player");
+        }
+        else
+        {
+            health = maxHealth;
+        }
         deltaHealthPercentage = health / maxHealth;
         StartCoroutine(Saving());
     }

@@ -14,7 +14,6 @@ public class SceneLoader : MonoBehaviour
 
     void Awake()
     {
-
         if (Instance == null)
         {
             Instance = this;
@@ -46,6 +45,7 @@ public class SceneLoader : MonoBehaviour
 
             yield return null;
          }
+        _loaderCanvas.SetActive(false);
     }
 
     void Update()

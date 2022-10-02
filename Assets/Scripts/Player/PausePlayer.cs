@@ -5,19 +5,35 @@ using UnityEngine;
 public class PausePlayer : MonoBehaviour
 {
     public Canvas pauseMenu;
+    public float timeScale;
+
+    void Awake()
+    {
+        pauseMenu.GetComponent<PauseScreen>().player = GetComponent<PlayerBehaviour>();
+    }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && pauseMenu.GetComponent<PauseScreen>().PauseMenuOn == false)
         {
-            pauseMenu.GetComponent<PauseScreen>().player = GetComponent<PlayerBehaviour>();
-            float timeScale = Time.timeScale;
+            timeScale = Time.timeScale;
             Time.timeScale = 0;
+            pauseMenu.GetComponent<PauseScreen>().timeScale = this.timeScale;
 
             Cursor.lockState = CursorLockMode.None;
 
             pauseMenu.gameObject.SetActive(true);
-            pauseMenu.GetComponent<PauseScreen>().timeScale = timeScale;
+
+            pauseMenu.GetComponent<PauseScreen>().PauseMenuOn = true;
+        }
+        else if (Input.GetKeyDown(KeyCode.Escape) && pauseMenu.GetComponent<PauseScreen>().PauseMenuOn == true)
+        {
+            Time.timeScale = timeScale;
+
+            Cursor.lockState = CursorLockMode.Locked;
+
+            pauseMenu.GetComponent<PauseScreen>().PauseMenuOn = false;
+            pauseMenu.gameObject.SetActive(false);
         }
     }
 }
